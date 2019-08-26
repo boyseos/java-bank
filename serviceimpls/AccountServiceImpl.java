@@ -18,10 +18,9 @@ public class AccountServiceImpl implements AccountService{
 		members[count] = new AccountBean();
 		members[count].setMoney(money);
 		System.out.println(members[count].getMoney());
-		arr = this.createAccountNum().split("-");
-		arr		
+		arr = this.createAccountNum().split("-");		
 		System.out.println("44");
-		members[count].setAccountNum(x);
+		members[count].setAccountNum(Integer.parseInt(arr[0]) * 10000 + Integer.parseInt(arr[1]));
 		count++;
 	}
 

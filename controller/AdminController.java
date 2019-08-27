@@ -8,7 +8,7 @@ import com.bank.web.services.AccountService;
 
 public class AdminController {
 	public static void main(String[] args) {
-		AccountBean member;
+		AccountBean member = new AccountBean();
 		AccountService service = new AccountServiceImpl();
 		while (true) {
 			switch (JOptionPane.showInputDialog("0.종료\n"
@@ -27,7 +27,6 @@ public class AdminController {
 				JOptionPane.showMessageDialog(null, "계좌생성");
 				break;
 			case "2":
-				member = new AccountBean();
 				member.setAccountNum(
 						JOptionPane.showInputDialog("계좌번호를 넣어주세요"));
 				member.setMoney(
@@ -37,12 +36,11 @@ public class AdminController {
 						service.findByAccountNum(member.getAccountNum()).toString());
 				break;
 			case "3":
-				member = new AccountBean();
 				member.setAccountNum(JOptionPane
 						.showInputDialog("계좌번호를 넣어주세요"));
 				member.setMoney(JOptionPane
 						.showInputDialog("얼마를 찾으시겠습니까"));
-				service.depositMoney(member);
+				service.withdrawMoney(member);
 				JOptionPane.showMessageDialog(null,	service
 						.findByAccountNum(member.getAccountNum()).toString());
 				break;

@@ -1,14 +1,14 @@
 package com.bank.web.serviceimpls;
 
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 import com.bank.web.domains.AccountBean;
 import com.bank.web.services.AccountService;
 
 public class AccountServiceImpl implements AccountService{
-	private AccountBean[] members = null;
+	private AccountBean[] members;
 	private int count;
 	
 	public AccountServiceImpl() {
@@ -40,7 +40,7 @@ public class AccountServiceImpl implements AccountService{
 	@Override
 	public AccountBean findByAccountNum(String accountNum) {
 		int num = 0;
-		for(int i = 0; i < count; i++) {
+		for(int i = 0 ; i < count; i++) {
 			if(accountNum.equals(members[i].getAccountNum())) {
 				break;
 			}
@@ -51,8 +51,7 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public boolean existAccountNum(String accountNum) {
-		AccountBean temp = findByAccountNum(accountNum);
-		return temp.getAccountNum() == null;
+		return findByAccountNum(accountNum).getAccountNum() == null;
 	}
 
 	@Override
@@ -77,7 +76,6 @@ public class AccountServiceImpl implements AccountService{
 		temp.setMoney(members[count].getMoney());
 		temp.setToday(members[count].getToday());
 		members[count] = null;
-		//temp 와 파인드아이디로 찾은 인스턴스는 참조하는 주소는 같을지언정 다른존재다.
 	}
 
 	@Override

@@ -33,8 +33,8 @@ public class AdminController {
 				member.setMoney(
 						JOptionPane.showInputDialog("얼마를 넣으시겠습니까"));
 				service.depositMoney(member);
-				JOptionPane.showMessageDialog(null, 
-						service.findByAccountNum(member.getAccountNum()).toString());
+				JOptionPane.showMessageDialog(null,	service
+						.findByAccountNum(member.getAccountNum()).toString());
 				break;
 			case "3":
 				member = new AccountBean();

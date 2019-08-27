@@ -6,8 +6,8 @@ import com.bank.web.domains.MemberBean;
 import com.bank.web.services.MemberService;
 
 public class MemberServiceImpl implements MemberService{
-	private CustomerBean[] members = null;
-	private AdminBean[] aMembers = null;
+	private CustomerBean[] members;
+	private AdminBean[] aMembers;
 	private int cusCount, adCount;
 
 	
@@ -124,7 +124,7 @@ public class MemberServiceImpl implements MemberService{
 //				}
 //			}
 //		}
-		return findById(id) != null;
+		return findById(id).getId() == null;
 		//return is;
 	}
 
@@ -181,18 +181,16 @@ public class MemberServiceImpl implements MemberService{
 	public void deleteMember(MemberBean param) {
 		int num = 0;
 		boolean is = true;
-		for (int i = 0; i < cusCount; i++) {
+		for (int i = 0 ; i < cusCount; i++,num++) {
 			if (param.getId().equals(members[i].getId())) {
-				num++;
 				is = false;
 				break;
 			}
 		}
 		if (is) {
 			num = 0;
-			for (int i = 0; i < adCount; i++) {
+			for (int i = 0 ; i < adCount; i++,num++) {
 				if (param.getId().equals(aMembers[i].getId())) {
-					num++;
 					break;
 				}
 			}

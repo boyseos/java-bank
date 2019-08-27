@@ -26,8 +26,8 @@ public class AdminController {
 						JOptionPane.showInputDialog("얼마를 넣으시겠습니까")));
 				JOptionPane.showMessageDialog(null, "계좌생성");
 				break;
-			case "2":new AccountBean();
-
+			case "2":
+				member = new AccountBean();
 				member.setAccountNum(
 						JOptionPane.showInputDialog("계좌번호를 넣어주세요"));
 				member.setMoney(
@@ -36,7 +36,8 @@ public class AdminController {
 				JOptionPane.showMessageDialog(null, 
 						service.findByAccountNum(member.getAccountNum()).toString());
 				break;
-			case "3":new AccountBean();
+			case "3":
+				member = new AccountBean();
 				member.setAccountNum(JOptionPane
 						.showInputDialog("계좌번호를 넣어주세요"));
 				member.setMoney(JOptionPane

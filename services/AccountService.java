@@ -1,6 +1,6 @@
-package services;
+package com.bank.web.services;
 
-import beans.AccountBean;
+import com.bank.web.domains.AccountBean;
 
 public interface AccountService {
 	public void createAccount(int money);

@@ -1,12 +1,10 @@
-package controller;
+package com.bank.web.controller;
 
 import javax.swing.JOptionPane;
 
-import com.sun.org.apache.bcel.internal.generic.ACONST_NULL;
-
-import beans.AccountBean;
-import serviceimpls.AccountServiceImpl;
-import services.AccountService;
+import com.bank.web.domains.AccountBean;
+import com.bank.web.serviceimpls.AccountServiceImpl;
+import com.bank.web.services.AccountService;
 
 public class UserController {
 	public static void main(String[] args) {

@@ -10,6 +10,7 @@ public class AdminController {
 	public static void main(String[] args) {
 		AccountBean member = null;
 		AccountService service = new AccountServiceImpl();
+		String result = null;
 		while (true) {
 			switch (JOptionPane.showInputDialog("0.종료\n"
 												+ "1.계좌개설\n"
@@ -64,7 +65,6 @@ public class AdminController {
 			case "7":
 				AccountBean[] aArr = new AccountBean[10]; 
 				aArr = service.findAll();
-				String result = "";
 				for(int i = 0; i < aArr.length; i++) {
 					if(aArr[i] == null) {
 						break;

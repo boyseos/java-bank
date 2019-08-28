@@ -29,7 +29,7 @@ public class MemberBean extends AccountBean {
 	}
 	@Override
 	public String toString() {
-		return "멤버정보 [id=" + id + ", pass=" + pass + ""
+		return "멤버정보\n [id=" + id + ", pass=" + pass + ""
 				+ ", name=" + name + ", ssn=" + ssn + "]";
 	}
 }

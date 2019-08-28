@@ -35,11 +35,13 @@ public class MemberServiceImpl implements MemberService{
 		for(int i = 0; i < cusCount; i++) {
 			if(name.equals(this.members[i].getName())) {
 				 num1++;
+				 break;
 			}
 		}
 		for(int i = 0; i < adCount; i++) {
 			if(name.equals(this.aMembers[i].getName())) {
 				 num2++;
+				 break;
 			}
 		}
 		num3 = num1 + num2; //동명이인의 수
@@ -128,32 +130,30 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public void updatePass(MemberBean param) {
-		String id = param.getId();		
-		String[] arr = param.getPass().split(",");
-		String oldPass = arr[0], newPass = arr[1];
-		param.setPass(oldPass);
-		if(login(param)) {
-			for(int i = 0; i< cusCount; i++) {
-				if(id.equals(members[i].getId())) {
-					members[i].setPass(newPass);
-					break;
-					}
-			}
-			for(int i = 0; i< adCount; i++) {
-				if(id.equals(aMembers[i].getId())) {
-					aMembers[i].setPass(newPass);
-					break;
-					}
-			}
-		}
+//		String id = param.getId();		
+//		String[] arr = param.getPass().split(",");
+//		String oldPass = arr[0], newPass = arr[1];
+//		param.setPass(oldPass);
+//		if(login(param)) {
+//			for(int i = 0; i< cusCount; i++) {
+//				if(id.equals(members[i].getId())) {
+//					members[i].setPass(newPass);
+//					break;
+//					}
+//			}
+//			for(int i = 0; i< adCount; i++) {
+//				if(id.equals(aMembers[i].getId())) {
+//					aMembers[i].setPass(newPass);
+//					break;
+//					}
+//			}
+//		}
 		
-	/**	
-	 * 2안 아이디이용
 		MemberBean temp = findById(param.getId());
-		if(temp.getId().equals(id)){
+		if(temp.getPass().equals(param.getPass().split(",")[0])){
 			temp.setPass(param.getPass().split(",")[1]);
 		}
-		**/
+
 		
 //		boolean is = true;
 //		for (int i = 0; i < cusCount; i++) {

@@ -22,7 +22,6 @@ public class Test {
 		//temp.setAccountNum(acNum);
 		//temp.setMoney(JOptionPane.showInputDialog("출금할돈"));
 		System.out.println(s.existAccountNum(acNum));
-		s.deleteAccountNum(acNum);
 		System.out.println(s.findAll()[0]);
 		System.out.println(s.findAll()[1]);
 		System.out.println(s.findAll()[2]);

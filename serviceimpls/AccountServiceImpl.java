@@ -20,9 +20,10 @@ public class AccountServiceImpl implements AccountService{
 		members[count] = new AccountBean();
 		members[count].setMoney(money+"");
 		members[count].setToday(findDate());
-		while (existAccountNum(createAccountNum())) {
-			members[count].setAccountNum(createAccountNum());
-		}
+		members[count].setAccountNum(createAccountNum());
+//		while (count != 0 && existAccountNum(createAccountNum())) {
+//			members[count].setAccountNum(createAccountNum());
+//		} 일단 보류..
 		count++;
 	}
 
@@ -51,7 +52,7 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public boolean existAccountNum(String accountNum) {
-		return findByAccountNum(accountNum).getAccountNum() == null;
+		return findByAccountNum(accountNum) != null;
 	}
 
 	@Override

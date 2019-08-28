@@ -35,13 +35,11 @@ public class MemberServiceImpl implements MemberService{
 		for(int i = 0; i < cusCount; i++) {
 			if(name.equals(this.members[i].getName())) {
 				 num1++;
-				 break;
 			}
 		}
 		for(int i = 0; i < adCount; i++) {
 			if(name.equals(this.aMembers[i].getName())) {
 				 num2++;
-				 break;
 			}
 		}
 		num3 = num1 + num2; //동명이인의 수
